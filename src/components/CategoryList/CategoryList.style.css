@@ -1,0 +1,20 @@
+@media (min-width:1px) {
+	.CategoryList {
+		flex-basis: calc(40% - 40px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		overflow: hidden;
+	}
+    
+	.CategoryList p {
+		text-align: center;
+	}
+}
+
+@media (min-width:599px) {
+  .CategoryList p {
+		text-align: left;
+
+  }
+}

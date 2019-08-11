@@ -1,12 +1,16 @@
 import React from 'react';
 
+import './CategoryList.style.css';
 import Category from './Category/Category.component';
 
 function CategoryList(props) {
+    const categories = Object.entries(props.categories).map((category, index) => {
+        return <Category key={index} categoryName={category[0]} projects={category[1]} />
+    })
     return (
-        Object.entries(props.categories).map((category, index) => {
-            return <Category key={index} categoryName={category[0]} projects={category[1]} />
-        })
+        <div className="CategoryList">
+            {categories}
+        </div>
     )
 }
 
