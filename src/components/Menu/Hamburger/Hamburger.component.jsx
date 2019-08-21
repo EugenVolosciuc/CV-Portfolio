@@ -1,8 +1,19 @@
 import React from 'react';
 
-function Hamburger() {
+import './hamburgers.css';
+import './Hamburger.style.css';
+
+function Hamburger(props) {
     return (
-        <p>Hamburger goes here!</p>
+        <button 
+            className={`${props.hamburgerClicked ? 'is-active' : null} Hamburger hamburger hamburger--spin`} 
+            type="button"
+            onClick={props.clickHamburger}
+        >
+            <span className="hamburger-box">
+                <span className="hamburger-inner"></span>
+            </span>
+        </button>
     )
 }
 

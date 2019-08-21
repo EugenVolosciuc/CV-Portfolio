@@ -1,0 +1,23 @@
+.Home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 340px;
+    align-items: stretch;
+}
+
+@media (min-width: 480px) {
+    .Home {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 599px) {
+    .Home {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: none;
+    }
+}

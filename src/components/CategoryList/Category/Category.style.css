@@ -1,0 +1,19 @@
+.Category {
+    width: 11rem;
+    display: inline-block;
+    background-color: #333333;
+    margin: 0.5rem 0;
+}
+
+.Category p {
+    color: #ffffff;
+    text-align: center;
+}
+
+
+@media (min-width:330px) {
+    .Category {
+        margin: 1rem 0;
+
+    }
+}

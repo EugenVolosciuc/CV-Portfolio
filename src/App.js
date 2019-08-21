@@ -1,16 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import { CSSTransition } from "react-transition-group";
+import { MatchMediaHOC } from "react-match-media";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import projectsJSON from './assets/projects.json';
-import socialLinks from './assets/social.json';
-import { MatchMediaHOC } from 'react-match-media';
-import CategoryList from './components/CategoryList/CategoryList.component';
-import Introduction from './components/Introduction/Introduction.component';
+import "./App.css";
 
-const CategoryListMobile = MatchMediaHOC(CategoryList, '(max-width: 599px)');
-const IntroductionMobile = MatchMediaHOC(Introduction, '(max-width: 599px)');
-const CategoryListDesktop = MatchMediaHOC(CategoryList, '(min-width: 599px)');
-const IntroductionDesktop = MatchMediaHOC(Introduction, '(min-width: 599px)');
+// Assets
+import projectsJSON from "./assets/projects.json";
+import socialLinks from "./assets/social.json";
+
+// Components
+import Hamburger from "./components/Menu/Hamburger/Hamburger.component";
+import Menu from "./components/Menu/Menu.component";
+
+// Pages
+import Home from "./Pages/Home/Home.page";
+import Websites from "./Pages/Websites/Websites.page";
+import WebApps from "./Pages/WebApps/WebApps.page";
+import MobileApps from "./Pages/MobileApps/MobileApps.page";
+
+const HamburgerMobile = MatchMediaHOC(Hamburger, "(max-width: 599px)");
 
 class App extends Component {
   constructor() {
@@ -18,16 +27,52 @@ class App extends Component {
     this.state = {
       categories: projectsJSON,
       currentCategory: null,
-      social: socialLinks
-    }
+      social: socialLinks,
+      menuIsVisible: false
+    };
+    this.handleHamburgerClick = this.handleHamburgerClick.bind(this);
   }
+
+  handleHamburgerClick() {
+    this.setState(prevState => ({ menuIsVisible: !prevState.menuIsVisible }));
+  }
+
   render() {
     return (
-      <div className="App" >
-        <IntroductionMobile />
-        <CategoryListMobile categories={this.state.categories} />
-        <CategoryListDesktop categories={this.state.categories} />
-        <IntroductionDesktop />
+      <div className="App">
+        <HamburgerMobile
+          hamburgerClicked={this.state.menuIsVisible}
+          clickHamburger={this.handleHamburgerClick}
+        />
+        <Router>
+          <CSSTransition
+            in={this.state.menuIsVisible}
+            timeout={300}
+            classNames="fade"
+            unmountOnExit
+          >
+            <Menu key={0} className="fade" />
+          </CSSTransition>
+          <Switch>
+            <Route
+              path="/"
+              render={() => <Home categories={this.state.categories} />}
+              exact
+            />
+            <Route
+              path="/websites"
+              render={() => <Websites projects={this.state.categories[0]} />}
+            />
+            <Route
+              path="/web-apps"
+              render={() => <WebApps projects={this.state.categories[1]} />}
+            />
+            <Route
+              path="/mobile-apps"
+              render={() => <MobileApps projects={this.state.categories[2]} />}
+            />
+          </Switch>
+        </Router>
       </div>
     );
   }

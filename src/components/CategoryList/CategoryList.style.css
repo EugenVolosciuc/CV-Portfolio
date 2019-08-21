@@ -1,9 +1,10 @@
 @media (min-width:1px) {
 	.CategoryList {
-		flex-basis: calc(40% - 40px);
+		flex-basis: calc(50% - 40px);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 		overflow: hidden;
 	}
     
