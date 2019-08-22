@@ -1,0 +1,19 @@
+.Project {
+    width: 80%;
+    min-height: 300px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+
+.Project .img-container {
+    width: 100%;
+    height: 50%;
+}
+
+.Project h3 {
+    text-align: center;
+}
+
+.Project p {
+    text-align: center;
+}

@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Category.style.css";
+import "./CategoryButton.style.css";
 
-function Category(props) {
+function CategoryButton(props) {
   return (
     <Link to={`/${props.categoryName.split(" ").join("-")}`}>
-      <div className="Category">
+      <div onClick={props.handleCategoryClick} className="CategoryButton">
         <p>{props.categoryName}</p>
       </div>
     </Link>
   );
 }
 
-export default Category;
+export default CategoryButton;

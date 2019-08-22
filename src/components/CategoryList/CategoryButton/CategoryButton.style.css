@@ -1,18 +1,19 @@
-.Category {
+.CategoryButton {
     width: 11rem;
     display: inline-block;
     background-color: #333333;
     margin: 0.5rem 0;
 }
 
-.Category p {
+.CategoryButton p {
     color: #ffffff;
     text-align: center;
+    text-transform: capitalize;
 }
 
 
 @media (min-width:330px) {
-    .Category {
+    .CategoryButton {
         margin: 1rem 0;
 
     }

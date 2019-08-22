@@ -1,0 +1,8 @@
+.BackButton {
+    position: relative;
+    top: 13px;
+    left: 13px;
+    padding: 8px;
+    display: inline-block;
+    cursor: pointer;
+}

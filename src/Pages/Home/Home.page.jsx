@@ -14,8 +14,8 @@ function Home(props) {
   return (
     <div className="Home">
       <IntroductionMobile />
-      <CategoryListMobile categories={props.categories} />
-      <CategoryListDesktop categories={props.categories} />
+      <CategoryListMobile handleCategoryClick={props.handleCategoryClick} categories={props.categories} />
+      <CategoryListDesktop handleCategoryClick={props.handleCategoryClick} categories={props.categories} />
       <IntroductionDesktop />
     </div>
   );

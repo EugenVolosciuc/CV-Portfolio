@@ -1,6 +1,7 @@
 .App {
   font-family: "Josefin Sans", sans-serif;
-  height: 100vh;
+  height: calc(100vh - 40px);
+  padding-top: 40px;
 }
 
 /* Transitions */

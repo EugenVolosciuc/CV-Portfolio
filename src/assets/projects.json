@@ -1,9 +1,10 @@
 {
-    "websites": [
-        {
+    "websites": [{
             "title": "Waymore",
             "description": "Personal photography portfolio showcasing portrait and concert photography work",
-            "images": []
+            "images": [
+                ""
+            ]
         },
         {
             "title": "Fitzrovia",
@@ -11,18 +12,14 @@
             "images": []
         }
     ],
-    "web apps": [
-        {
-            "title": "Feed Me",
-            "description": "POS App Design for a new café in town, created for an easier way to make an order and get rid of the queue at the entrance",
-            "images": []
-        }
-    ],
-    "mobile apps": [
-        {
-            "title": "ILO",
-            "description": "Web and Mobile Design for table booking application in exquisite restaurants from nordic countries in Europe",
-            "images": []
-        }
-    ]
+    "web apps": [{
+        "title": "Feed Me",
+        "description": "POS App Design for a new café in town, created for an easier way to make an order and get rid of the queue at the entrance",
+        "images": []
+    }],
+    "mobile apps": [{
+        "title": "ILO",
+        "description": "Web and Mobile Design for table booking application in exquisite restaurants from nordic countries in Europe",
+        "images": []
+    }]
 }
